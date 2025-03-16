@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #f0dfc0, #079968);
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -10,10 +10,10 @@ body {
 
 .container {
     background: white;
-    padding: 30px; /* Aumenté el padding */
+    padding: 30px; 
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 400px; /* Evita que se haga muy grande en pantallas grandes */
+    max-width: 400px; 
     width: 100%;
 }
 
@@ -33,14 +33,14 @@ label {
 }
 
 input {
-    width: 100%; /* Hace que ocupen todo el ancho disponible */
+    width: 100%; 
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     transition: 0.3s;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    box-sizing: border-box; 
 }
 
 
@@ -95,7 +95,7 @@ transparent;
   --thickness: 0.3rem;
   --roundness: 1.2rem;
   --color: 
-#1771e7;
+#07b656;
   --opacity: 0.6;
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);

@@ -1,52 +1,53 @@
-document.getElementById("formulario").addEventListener("submit", function(event) {
+// Función para validar el formulario
+function validarFormulario() {
+    
     let nombre = document.getElementById("nombre").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let confirmPassword = document.getElementById("confirmarContraseña").value;
+    let errorNombre = document.getElementById("errorNombre");
 
-    let errorNombre = document.getElementById("error-nombre");
-    let errorEmail = document.getElementById("error-email");
-    let errorPassword = document.getElementById("error-password");
-    let errorConfirmPassword = document.getElementById("error-confirmarContraseña");
+    let email = document.getElementById("email").value;
+    let errorEmail = document.getElementById("errorEmail");
+
+    let contraseña = document.getElementById("contraseña").value;
+    let errorContraseña = document.getElementById("errorContraseña");
+
+    let confirmar = document.getElementById("confirmar").value;
+    let errorConfirmar = document.getElementById("errorConfirmar");
+
 
     let valido = true;
 
-    // Validar nombre
+    // Validación del nombre
     if (nombre.length < 3) {
-        errorNombre.textContent = "Debe tener al menos 3 caracteres";
+        errorNombre.innerHTML = "Debe tener al menos 3 caracteres";
         valido = false;
     } else {
-        errorNombre.textContent = "";
+        errorNombre.innerHTML = "";
     }
 
-    // Validar email
+    // Validación del email
     if (!email.includes("@") || !email.includes(".")) {
-        errorEmail.textContent = "Ingrese un email válido";
+        errorEmail.innerHTML = "Debe ser un email válido";
         valido = false;
     } else {
-        errorEmail.textContent = "";
+        errorEmail.innerHTML = "";
     }
 
-    // Validar contraseña
-    if (password.length < 8) {
-        errorPassword.textContent = "Debe tener al menos 8 caracteres";
+    // Validación de la contraseña
+    let regexPassword = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+    if (!regexPassword.test(contraseña)) {
+        errorContraseña.innerHTML = "Debe tener al menos 8 caracteres, un número y una letra";
         valido = false;
     } else {
-        errorPassword.textContent = "";
+        errorContraseña.innerHTML = "";
     }
 
-    // Validar confirmación de contraseña
-    if (password !== confirmPassword) {
-        errorConfirmPassword.textContent = "Las contraseñas no coinciden";
+    // Validación de confirmación de contraseña
+    if (password !== confirmar) {
+        errorConfirmar.innerHTML = "Las contraseñas no coinciden";
         valido = false;
     } else {
-        errorConfirmPassword.textContent = "";
+        errorConfirmar.innerHTML = "";
     }
 
-    // Si hay errores, detener el envío del formulario
-    if (!valido) {
-        event.preventDefault();
-    } else {
-        alert("Registro exitoso!");
-    }
-});
+    return valido; // Si es falso, el formulario no se envía
+}
