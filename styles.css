@@ -53,6 +53,11 @@ input:focus {
 h1{
   text-align: center;
 }
+
+span{
+  color: red;
+}
+
 .btn-101,
 .btn-101 *,
 .btn-101 :after,
