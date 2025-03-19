@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let email = document.getElementById("email").value;
         let errorEmail = document.getElementById("errorEmail");
 
-        let password = document.getElementById("contraseña").value;
-        let errorPassword = document.getElementById("errorContraseña");
+        let contra = document.getElementById("contraseña").value;
+        let errorContra = document.getElementById("errorContraseña");
 
         let confirmar = document.getElementById("confirmar").value;
         let errorConfirmar = document.getElementById("errorConfirmar");
@@ -37,15 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Validar contraseña
         let regexPassword = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
-        if (!regexPassword.test(password)) {
-            errorPassword.innerHTML = "Debe tener al menos 8 caracteres, un número y una letra";
+        if (!regexPassword.test(contra)) {
+            errorContra.innerHTML = "Debe tener al menos 8 caracteres, un número y una letra";
             valido = false;
         } else {
-            errorPassword.innerHTML = "";
+            errorContra.innerHTML = "";
         }
 
         // Validar contraseña
-        if (password !== confirmar) {
+        if (contra !== confirmar) {
             errorConfirmar.innerHTML = "Las contraseñas no coinciden";
             valido = false;
         } else {
