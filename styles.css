@@ -58,6 +58,34 @@ span{
   color: red;
 }
 
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modo-oscuro .container {
+    background-color: #111; 
+    color: white;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modo-oscuro input {
+    background-color: #222;
+    color: white;
+    border: 1px solid white;
+}
+
+.modo-oscuro button {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+}
+
+.modo-oscuro button:hover {
+    background-color: #555;
+}
+
 
 .btn-101,
 .btn-101 *,

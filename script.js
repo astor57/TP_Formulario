@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("registro");
+    const botonModo = document.getElementById("modoOscuro");
+    const body = document.body;
+
+    if (localStorage.getItem("modoOscuro") === "activado") {
+        body.classList.add("modo-oscuro");
+        botonModo.textContent = "☀️ Modo Claro";
+    }
+
+    botonModo.addEventListener("click", function () {
+        body.classList.toggle("modo-oscuro");
+
+        if (body.classList.contains("modo-oscuro")) {
+            localStorage.setItem("modoOscuro", "activado");
+            botonModo.textContent = "☀️ Modo Claro";
+        } else {
+            localStorage.setItem("modoOscuro", "desactivado");
+            botonModo.textContent = "🌙 Modo Oscuro";
+        }
+    });
+
 
     form.addEventListener("submit", function (event) {
         event.preventDefault(); 
