@@ -50,6 +50,9 @@ input:focus {
     outline: none;
 }
 
+h1{
+  text-align: center;
+}
 .btn-101,
 .btn-101 *,
 .btn-101 :after,
