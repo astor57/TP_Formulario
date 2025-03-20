@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
 }
-.container {
+.campo {
     background: white;
     padding: 30px; 
     border-radius: 10px;
@@ -55,7 +55,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.modo-oscuro .container {
+.modo-oscuro .campo {
     background-color: #111; 
     color: white;
     border: 2px solid white;
@@ -80,6 +80,8 @@ body {
 }
 
 
+
+/* Botón */
 .btn-101,
 .btn-101 *,
 .btn-101 :after,

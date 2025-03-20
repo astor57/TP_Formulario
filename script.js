@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const botonModo = document.getElementById("modoOscuro");
     const body = document.body;
 
-    if (localStorage.getItem("modoOscuro") === "activado") {
+    if (localStorage.getItem("modoOscuro") === "activado") 
+    {
         body.classList.add("modo-oscuro");
         botonModo.textContent = "☀️ Modo Claro";
     }
@@ -11,10 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     botonModo.addEventListener("click", function () {
         body.classList.toggle("modo-oscuro");
 
-        if (body.classList.contains("modo-oscuro")) {
+        if (body.classList.contains("modo-oscuro")) 
+        {
             localStorage.setItem("modoOscuro", "activado");
             botonModo.textContent = "☀️ Modo Claro";
-        } else {
+        } else 
+        {
             localStorage.setItem("modoOscuro", "desactivado");
             botonModo.textContent = "🌙 Modo Oscuro";
         }
@@ -39,16 +42,19 @@ document.addEventListener("DOMContentLoaded", function () {
         let valido = true;
 
         // Validar nombre
-        if (nombre.length < 3) {
-            errorNombre.innerHTML = "Debe tener al menos 3 caracteres";
+        if (nombre.length < 3) 
+        {
+            errorNombre.innerHTML = "Debe tener mínimo 3 caracteres";
             valido = false;
         } else {
             errorNombre.innerHTML = "";
         }
 
         // Validar email
-        let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!regexEmail.test(email)) {
+        let simbolos = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!simbolos.test(email)) 
+        {
             errorEmail.innerHTML = "Debe ser un email válido";
             valido = false;
         } else {
@@ -56,23 +62,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Validar contraseña
-        let regexPassword = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
-        if (!regexPassword.test(contra)) {
-            errorContra.innerHTML = "Debe tener al menos 8 caracteres, un número y una letra";
+        let simbolo_contraseña = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+
+        if (!simbolo_contraseña.test(contra)) 
+        {
+            errorContra.innerHTML = "Debe tener mínimo 8 caracteres, al menos un número y una letra";
             valido = false;
         } else {
             errorContra.innerHTML = "";
         }
 
         // Validar contraseña
-        if (contra !== confirmar) {
-            errorConfirmar.innerHTML = "Las contraseñas no coinciden";
+        if (contra !== confirmar) 
+        {
+            errorConfirmar.innerHTML = "Las contraseñas no son iguales";
             valido = false;
         } else {
             errorConfirmar.innerHTML = "";
         }
 
-        if (!valido) {
+        if (!valido) 
+        {
             return;
         }
 
