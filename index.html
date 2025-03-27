@@ -11,19 +11,19 @@
       <h1>Registrar</h1>
         <form id="registro">
             <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre">
+            <input type="text" id="nombre" onkeyup="ValidarNombre()">
             <span id="errorNombre" class="error"></span>
 
             <label for="email">Email</label>
-            <input type="text" id="email">
+            <input type="text" id="email" onkeyup="ValidarEmail()">
             <span id="errorEmail" class="error"></span>
 
             <label for="contraseña">Contraseña</label>
-            <input type="password" id="contraseña">
+            <input type="password" id="contraseña" onkeyup="ValidarContraseña()">
             <span id="errorContraseña" class="error"></span>
 
             <label for="confirmar">Confirmar contraseña</label>
-            <input type="password" id="confirmar">
+            <input type="password" id="confirmar" onkeyup="ValidarContraseñasIguales()">
             <span id="errorConfirmar" class="error"></span>
 
             <button type="submit" class="btn-101">
